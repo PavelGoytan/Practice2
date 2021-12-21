@@ -1,18 +1,19 @@
 package TaskB.Chapter1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  * Вариант B
  * Ввести с консоли n целых чисел. На консоль вывести:
- * 1. Четные и нечетные числа.
- * 2. Наибольшее и наименьшее число.
- * 3. Числа, которые делятся на 3 или на 9.
- * 4. Числа, которые делятся на 5 и на 7.
+ * 1. Четные и нечетные числа.+
+ * 2. Наибольшее и наименьшее число.+
+ * 3. Числа, которые делятся на 3 или на 9.+
+ * 4. Числа, которые делятся на 5 и на 7.+
  * 5. Все трехзначные числа, в десятичной записи которых нет одинаковых
- * цифр.
+ * цифр.+
  * 6. Простые числа.
- * 7. Отсортированные числа в порядке возрастания и убывания.
+ * 7. Отсортированные числа в порядке возрастания и убывания.+
  * 8. Числа в порядке убывания частоты встречаемости чисел.
  * 9. «Счастливые» числа.
  * 10. Числа-палиндромы, значения которых в прямом и обратном порядке совпа-
@@ -30,6 +31,8 @@ public class TaskB1 {
         StringBuilder oddInt = new StringBuilder();
         StringBuilder divideByThree = new StringBuilder();
         StringBuilder divideByFive = new StringBuilder();
+        StringBuilder sortThree = new StringBuilder();
+        StringBuilder sortSimple = new StringBuilder();
         int max = 0;
         int min;
         for (int j = 0; j < array.length; j++) {
@@ -53,12 +56,33 @@ public class TaskB1 {
                 divideByFive.append(j).append(" ");
             }
         }
+        String num;
+        for (int i = 0; i < array.length; i++) {
+            if(array[i].length()==3) {
+                num = array[i];
+                if (num.charAt(0) != num.charAt(1)
+                        && num.charAt(1) != (num.charAt(2))
+                        &&num.charAt(2) != (num.charAt(0))) {
+                    sortThree.append(num).append(" ");
+                }
+            }
+        }
+
+        Arrays.sort(arrayInt);
+        StringBuilder arrayIntRev = new StringBuilder();
+        for (int i = arrayInt.length-1; i >= 0 ; i--) {
+            arrayIntRev.append(String.valueOf(arrayInt[i])).append(" ");
+        }
+        System.out.println(arrayIntRev);
+        System.out.println(Arrays.toString(arrayInt));
         System.out.println(evenInt);
         System.out.println(oddInt);
         System.out.println(min);
         System.out.println(max);
         System.out.println(divideByThree);
         System.out.println(divideByFive);
+        System.out.println(sortThree);
+
 
     }
 
