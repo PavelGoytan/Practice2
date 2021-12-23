@@ -3,6 +3,7 @@ package TaskB.Chapter3;
 import TaskB.Chapter3.Students.Student;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 /**
  * Создать классы, спецификации которых приведены ниже. Определить кон-
@@ -20,11 +21,16 @@ import java.time.LocalDate;
  */
 public class TaskA1 {
     public static void main(String[] args) {
-        Object[] array = new Object[30];
-        for (int i = 0; i < array.length; i++) {
-            array[i]=new Student(i+1,"Hgff"+i,"Adscs"+i,"Aqwqe"+i,"Pasdsd 40"+i
-                    ,"SA","1","1AS2", "37529316039"+i, LocalDate.of(1988,12,13));
-            System.out.println(array[i].toString());
+        MassivSt massivSt = new MassivSt(StudentsArray.createArray(30));
+        Random random = new Random();
+        int n = random.nextInt(30);
+        while (n!=10) {
+            System.out.println(massivSt.getArray()[n]);
+            n = random.nextInt(30);
         }
+
+
     }
+
+
 }
