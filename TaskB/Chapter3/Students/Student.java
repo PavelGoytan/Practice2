@@ -1,5 +1,7 @@
 package TaskB.Chapter3.Students;
 
+import TaskB.Chapter3.Service.RandomSimbol;
+
 import java.time.LocalDate;
 
 import java.util.Random;
@@ -61,8 +63,8 @@ public class Student {
         int m = random.nextInt(10);
         Student[] arrayStudents = new Student[b];
         for (int i = 0; i < arrayStudents.length; i++) {
-            arrayStudents[i] = new Student(i+1,"Pavel"+i, "Hoitan"+i,
-                    "Vladimirovich"+i,"Pavlovsskogo st. "+i,"BF",
+            arrayStudents[i] = new Student(i+1, RandomSimbol.firstChar()+"avel", RandomSimbol.firstChar()+"oitan",
+                    RandomSimbol.firstChar()+"ladimirovich",RandomSimbol.firstChar()+"avlovsskogo st. "+i,"BF",
                     "1","4294B","+37529316039"+i,LocalDate.of(1980+m,12,13));
             System.out.println(arrayStudents[i].toString());
             m = random.nextInt(10);

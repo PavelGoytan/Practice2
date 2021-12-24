@@ -31,7 +31,7 @@ public class TaskA1 {
 //        }
         LocalDate deadLine = LocalDate.of(1985, 1,1);
         Student[] array = Student.arrayStudents(30);
-        System.out.println(array[3].getId());
+//        System.out.println(array[3].getId());
         List<Student> list = new ArrayList<>();
         for (Student student : array) {
             if (student.getDateOfBirth().compareTo(deadLine) > 0) {
@@ -39,9 +39,9 @@ public class TaskA1 {
             }
         }
 
-        for (Student student : list) {
-            System.out.println(student);
-        }
+//        for (Student student : list) {
+//            System.out.println(student);
+//        }
 
 
 
