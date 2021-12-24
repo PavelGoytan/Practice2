@@ -3,7 +3,8 @@ package TaskB.Chapter3;
 import TaskB.Chapter3.Students.Student;
 
 import java.time.LocalDate;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Создать классы, спецификации которых приведены ниже. Определить кон-
@@ -21,13 +22,27 @@ import java.util.Random;
  */
 public class TaskA1 {
     public static void main(String[] args) {
-        MassivSt massivSt = new MassivSt(StudentsArray.createArray(30));
-        Random random = new Random();
-        int n = random.nextInt(30);
-        while (n!=10) {
-            System.out.println(massivSt.getArray()[n]);
-            n = random.nextInt(30);
+//        MassivSt massivSt = new MassivSt(StudentsArray.createArray(30));
+//        Random random = new Random();
+//        int n = random.nextInt(30);
+//        while (n!=10) {
+//            System.out.println(massivSt.getArray()[n]);
+//            n = random.nextInt(30);
+//        }
+        LocalDate deadLine = LocalDate.of(1985, 1,1);
+        Student[] array = Student.arrayStudents(30);
+        System.out.println(array[3].getId());
+        List<Student> list = new ArrayList<>();
+        for (Student student : array) {
+            if (student.getDateOfBirth().compareTo(deadLine) > 0) {
+                list.add(student);
+            }
         }
+
+        for (Student student : list) {
+            System.out.println(student);
+        }
+
 
 
     }
