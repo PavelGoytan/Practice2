@@ -57,6 +57,9 @@ public class Student {
         return dateOfBirth;
     }
 
+    public String getFac() {
+        return fac;
+    }
 
     public static Student[] arrayStudents(int b){
         Random random = new Random();
@@ -64,7 +67,7 @@ public class Student {
         Student[] arrayStudents = new Student[b];
         for (int i = 0; i < arrayStudents.length; i++) {
             arrayStudents[i] = new Student(i+1, RandomSimbol.firstChar()+"avel", RandomSimbol.firstChar()+"oitan",
-                    RandomSimbol.firstChar()+"ladimirovich",RandomSimbol.firstChar()+"avlovsskogo st. "+i,"BF",
+                    RandomSimbol.firstChar()+"ladimirovich",RandomSimbol.firstChar()+"avlovsskogo st. "+i,RandomSimbol.facChar()+"F",
                     "1","4294B","+37529316039"+i,LocalDate.of(1980+m,12,13));
             System.out.println(arrayStudents[i].toString());
             m = random.nextInt(10);

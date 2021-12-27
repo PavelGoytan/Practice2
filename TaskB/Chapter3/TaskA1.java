@@ -4,6 +4,8 @@ import TaskB.Chapter3.Students.Student;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -31,12 +33,39 @@ public class TaskA1 {
 //        }
         LocalDate deadLine = LocalDate.of(1985, 1,1);
         Student[] array = Student.arrayStudents(30);
+        Customer[] arrayCustomer = Customer.customers(30);
+        List<Customer> customerList = new ArrayList<>();
+        Collections.addAll(customerList, arrayCustomer);
+//        for (Customer customer : customerList) {
+//            System.out.println(customer);
+//        }
+        for (Customer customer : customerList) {
+            if(customer.getCrediteCard()>=1000&&customer.getCrediteCard()<=10000000){
+                System.out.println(customer);
+            }
+        }
+//        customerList.sort(Comparator.comparing(Customer::getFirstName));
+        customerList.sort(Comparator.comparing(Customer::getFirstName));
+
+//        for (Customer customer : customerList) {
+//            System.out.println(customer);
+//        }
+
 //        System.out.println(array[3].getId());
         List<Student> list = new ArrayList<>();
+        List<Student> listFacOne = new ArrayList<>();
         for (Student student : array) {
             if (student.getDateOfBirth().compareTo(deadLine) > 0) {
                 list.add(student);
             }
+        }
+        for (Student student : array) {
+            if(student.getFac().compareTo("BF")==0){
+                listFacOne.add(student);
+            }
+        }
+        for (Student student : listFacOne) {
+            System.out.println(student);
         }
 
 //        for (Student student : list) {
