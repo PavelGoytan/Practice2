@@ -4,6 +4,11 @@ import java.util.Objects;
 
 public class Text {
     private String str;
+    private Word word;
+    private Sentence sentence;
+    public Text(Word word, Sentence sentence) {
+        this.str = word.toString()+" "+sentence.toString();
+    }
 
     public Text() {
     }
@@ -44,7 +49,7 @@ public class Text {
 
 
     public void printText(Text text) {
-        System.out.println(text);
+        System.out.println(text.toString());
     }
 
     public String titleText(String title) {

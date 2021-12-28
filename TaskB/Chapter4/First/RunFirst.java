@@ -15,6 +15,13 @@ public class RunFirst {
         System.out.println(text);
         text.titleText("THE ADVENTURES");
         System.out.println(text);
+        word.setWord("end");
+        text.addWord(word);
+        System.out.println(text);
+        Text text1 = new Text(word,sentence);
+        text1.printText(text1);
+
+
 
     }
 }
