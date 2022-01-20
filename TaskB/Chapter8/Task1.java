@@ -15,17 +15,22 @@ public class Task1 {
         char c = RandomSimbol.firstChar();
         Random random = new Random();
         int i = random.nextInt(4);
-        String text = "My name is Pavel. I am thirty three years old. I live in Belarusian. I like to play basketball";
+        String text = "My name is Pavel. I am thirty three years old. I live in Belarusian. I like to play basketball!";
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(text);
-        Pattern pattern = Pattern.compile("[a-zA-Z]{4,}");
-        Matcher matcher= pattern.matcher(stringBuilder);
+//        stringBuilder.append(text);
+        String sub = "SUB";
+        Pattern pattern = Pattern.compile("[a-zA-Z]+");
+        Matcher matcher= pattern.matcher(text);
         while (matcher.find()){
             int start = matcher.start();
             int end = matcher.end();
             int length = end-start;
-            if(length>=i){
-                stringBuilder.setCharAt(start+i,c);
+            if(length>=3){
+                String substring = text.substring(start, start + 3);
+                stringBuilder.append(substring).append(sub).append(" ");
+            } else {
+                String substring = text.substring(start, end);
+                stringBuilder.append(substring).append(" ");
             }
 
         }
