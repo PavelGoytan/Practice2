@@ -14,7 +14,7 @@ public class Task15 {
             if (array[i] >= 0) {
                 array[i] *= array[i];
                 System.out.println(array[i]);
-            } else if (array[i] <= 0) {
+            } else if (array[i] < 0) {
                 array[i] = Math.pow(array[i], 4);
                 System.out.println(array[i]);
             }
